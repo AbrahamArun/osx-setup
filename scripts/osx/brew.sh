@@ -39,3 +39,10 @@ brew install "${apps[@]}"
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+# set up nvm
+mkdir ~/.nvm
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+
+brew doctor

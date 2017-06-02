@@ -4,6 +4,28 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Directories to be prepended to $PATH
+declare -a dirs_to_prepend
+dirs_to_prepend=(
+  "/usr/bin"
+  "/usr/local/sbin"
+  "$HOME/bin"
+)
+
+export NVM_DIR="$HOME/.nvm"
+
+for dir in ${(k)dirs_to_prepend[@]}
+do
+  if [ -d ${dir} ]; then
+    # If these directories exist, then prepend them to existing PATH
+    PATH="${dir}:$PATH"
+  fi
+done
+
+unset dirs_to_prepend
+
+export PATH
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes

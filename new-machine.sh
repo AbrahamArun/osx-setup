@@ -54,21 +54,29 @@ fi
 sh $DOTFILES_DIR/scripts/osx/install-ntfs-driver.sh
 
 ###############################################################################
+# Node                                                                        #
+###############################################################################
+
+sh $DOTFILES_DIR/scripts/osx/npm.sh
+
+
+###############################################################################
 # Homebrew                                                                    #
 ###############################################################################
 
-caffeinate -id $DOTFILES_DIR/scripts/osx/brew.sh
-caffeinate -id $DOTFILES_DIR/scripts/osx/brew-cask.sh
+# caffeinate -id $DOTFILES_DIR/scripts/osx/brew.sh
+# caffeinate -id $DOTFILES_DIR/scripts/osx/brew-cask.sh
 
 ###############################################################################
 # OSX defaults                                                                #
 # https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
 ###############################################################################
 
-caffeinate -id sh $DOTFILES_DIR/scripts/osx/set-defaults.sh
+# caffeinate -id sh $DOTFILES_DIR/scripts/osx/set-defaults.sh
 
 ###############################################################################
 # Symlinks to link dotfiles into ~/                                           #
 ###############################################################################
 
-caffeinate -id ./install-zsh.sh
+brew doctor
+# caffeinate -id ./install-zsh.sh
