@@ -21,7 +21,10 @@ export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 declare -a FILES_TO_SYMLINK=(
-  'scripts/shell/zshrc'
+  'scripts/shell/zshrc',
+  'scripts/shell/shell_exports',
+  'scripts/shell/shell_aliases',
+  'scripts/shell/shell_config'
 )
 
 symlink-dotfiles () {
@@ -92,6 +95,11 @@ config-iterm() {
   cp -rf ${DOTFILES_DIR}/scripts/iterm/com.googlecode.iterm2.plist ~/Library/Preferences
 }
 
+git-config() {
+  git config --global user.name "Arun Abraham"
+  git config --global user.email "arun4xp@gmail.com"
+}
+
 main () {
   chsh -s $(which zsh)
   source ~/.zshrc
@@ -106,6 +114,8 @@ main () {
   # Only use UTF-8 in Terminal.app
   defaults write com.apple.terminal StringEncodings -array 4
   config-iterm
+
+  git-config
   # Reload zsh settings
   source ~/.zshrc
 }

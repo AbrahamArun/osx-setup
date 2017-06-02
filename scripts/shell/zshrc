@@ -12,8 +12,6 @@ dirs_to_prepend=(
   "$HOME/bin"
 )
 
-export NVM_DIR="$HOME/.nvm"
-
 for dir in ${(k)dirs_to_prepend[@]}
 do
   if [ -d ${dir} ]; then
@@ -74,6 +72,14 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew node npm history git-flow vagrant zsh-syntax-highlighting)
+
+# User configuration
+
+# Load the shell dotfiles
+for file in $HOME/.{shell_exports,shell_aliases,shell_config}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 source $ZSH/oh-my-zsh.sh
 
