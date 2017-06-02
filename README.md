@@ -1,3 +1,3 @@
 ## Set up instructions
 
-`echo "N" | ./install-zsh.sh && ./setup.sh`
+`echo "N" | ./install-zsh.sh && ./post-install-zsh.sh`
