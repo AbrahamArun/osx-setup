@@ -1,15 +1,15 @@
 #!/bin/bash
 
+echo "Clearing all brew packages"
+brew remove --force --ignore-dependencies $(brew list)
+brew cask remove --force --ignore-dependencies $(brew cask list)
+
 echo "Grant sudo permission to run this script"
 
 if [ $EUID != 0 ]; then
     sudo "$0" "$@"
     exit $?
 fi
-
-echo "Clearing all brew packages"
-brew remove --force --ignore-dependencies $(brew list)
-brew cask remove --force --ignore-dependencies $(brew cask list)
 
 rm -rf /usr/local/.DS_Store
 rm -rf /usr/local/bin/

@@ -21,9 +21,9 @@ export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 declare -a FILES_TO_SYMLINK=(
-  'scripts/shell/zshrc',
-  'scripts/shell/shell_exports',
-  'scripts/shell/shell_aliases',
+  'scripts/shell/zshrc'
+  'scripts/shell/shell_exports'
+  'scripts/shell/shell_aliases'
   'scripts/shell/shell_config'
 )
 
