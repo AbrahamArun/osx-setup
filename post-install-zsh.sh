@@ -55,7 +55,7 @@ symlink-dotfiles () {
 
 copy-binaries () {
   # Copy binaries
-  ln -fs $HOME/dotfiles/bin $HOME
+  ln -fs $DOTFILES_DIR/bin $HOME
   declare -a BINARIES=(
     'batcharge.py'
     'crlf'

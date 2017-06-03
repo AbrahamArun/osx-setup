@@ -8,7 +8,7 @@
 #
 
 # Set computer name
-COMPUTERNAME="Arun Abraham (Fybr)"
+COMPUTERNAME="Arun Abraham"
 HOSTNAME='arun'
 LOCALHOSTNAME='arun'
 
