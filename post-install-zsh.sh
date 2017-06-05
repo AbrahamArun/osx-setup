@@ -100,10 +100,17 @@ git-config() {
   git config --global user.email "arun4xp@gmail.com"
 }
 
+install-patched-powerline-font {
+  git clone https://github.com/powerline/fonts.git
+  sh fonts/install.sh
+  rm -rf fonts
+  echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
+}
+
 main () {
   chsh -s $(which zsh)
   source ~/.zshrc
-
+  install-patched-powerline-font
   symlink-dotfiles
   copy-binaries
   set-online-check-cron-job
