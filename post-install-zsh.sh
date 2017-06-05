@@ -100,7 +100,7 @@ git-config() {
   git config --global user.email "arun4xp@gmail.com"
 }
 
-install-patched-powerline-font {
+install-patched-powerline-font() {
   git clone https://github.com/powerline/fonts.git
   sh fonts/install.sh
   rm -rf fonts
