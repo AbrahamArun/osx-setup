@@ -23,6 +23,7 @@ apps=(
     vagrant-manager
     virtualbox
     virtualbox-extension-pack
+    android-platform-tools
 )
 
 # TODO: See if this can be automated
